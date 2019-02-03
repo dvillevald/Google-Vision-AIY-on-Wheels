@@ -8,6 +8,5 @@ This is the demo of the final product:
 " target="_blank"><img src="https://img.youtube.com/vi/e1W9Q3tUM7I/0.jpg" 
 alt="Google Vision AIY Kit on Wheels" width="480" height="360" border="10" /></a>
 
-<a href="https://youtu.be/t6PqVN4q7Sw
-" target="_blank"><img src="http://img.youtube.com/vi/t6PqVN4q7Sw/0.jpg" 
-alt="Hand gesture classifier with Google Vision AIY Kit" width="480" height="360" border="10" /></a>
+## Robot Chassis
+I purchased UNIROI Smart Robot Car Kit Arduino Robot Kit on amazon.com which comes with Arduino UNO R3 board and documentation including chassis schematics, assembly instructions and Arduino sketch Comprehensive_Experiment.ino uploaded to UNO R3 by a manufacturers (attached.)
