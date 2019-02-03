@@ -5,6 +5,9 @@ This is the demo of the final product:
 <a href="https://youtu.be/e1W9Q3tUM7I" target="_blank"></a>
 
 <a href="https://youtu.be/e1W9Q3tUM7I
-" target="_blank"><img src="https://youtu.be/e1W9Q3tUM7I/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+" target="_blank"><img src="https://img.youtu.com/e1W9Q3tUM7I/0.jpg" 
+alt="Google Vision AIY Kit on Wheels" width="480" height="180" border="10" /></a>
 
+<a href="https://youtu.be/t6PqVN4q7Sw
+" target="_blank"><img src="http://img.youtube.com/vi/t6PqVN4q7Sw/0.jpg" 
+alt="Hand gesture classifier with Google Vision AIY Kit" width="480" height="360" border="10" /></a>
