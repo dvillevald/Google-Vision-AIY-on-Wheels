@@ -8,5 +8,8 @@ This is the demo of the final product:
 " target="_blank"><img src="https://img.youtube.com/vi/e1W9Q3tUM7I/0.jpg" 
 alt="Google Vision AIY Kit on Wheels" width="480" height="360" border="10" /></a>
 
+## Warning
+Please use common sense and be careful when playing with this robot - it is searching for human faces and drives toward them so don't put your face too close to the robot and don't let little children play with it without supervision!
+
 ## Robot Chassis
 I purchased UNIROI Smart Robot Car Kit Arduino Robot Kit on amazon.com which comes with Arduino UNO R3 board and documentation including chassis schematics, assembly instructions and Arduino sketch Comprehensive_Experiment.ino uploaded to UNO R3 by a manufacturers (attached.)
