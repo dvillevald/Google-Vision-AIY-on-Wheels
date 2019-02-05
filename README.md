@@ -31,6 +31,8 @@ Please use common sense and be careful when playing with this robot - it is sear
 I purchased **UNIROI Smart Robot Car Kit Arduino Robot Kit** on amazon.com which comes with **Arduino UNO R3** board and documentation including chassis schematics, assembly instructions and Arduino sketch *Comprehensive_Experiment.ino* uploaded to UNO R3 by a manufacturers (located in **/arduino** folder.)
 
 <img width="800" height="600" src="images/chassis_with_drilled_holes.jpg">
+<img width="800" height="600" src="images/Lower deck assembled.jpg">
+<img width="800" height="600" src="images/Lower deck bottom view.jpg">
 
 ## Adding Google Vision AIY kit
 
