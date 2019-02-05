@@ -31,8 +31,6 @@ Please use common sense and be careful when playing with this robot - it is sear
 I purchased **UNIROI Smart Robot Car Kit Arduino Robot Kit** on amazon.com which comes with **Arduino UNO R3** board and documentation including chassis schematics, assembly instructions and Arduino sketch *Comprehensive_Experiment.ino* uploaded to UNO R3 by a manufacturers (located in **/arduino** folder.)
 
 <img width="800" height="600" src="images/chassis_with_drilled_holes.jpg">
-<img width="800" height="600" src="images/Lower deck assembled.jpg">
-<img width="800" height="600" src="images/Lower deck bottom view.jpg">
 
 ## Adding Google Vision AIY kit
 
@@ -44,4 +42,6 @@ Lower deck was used to carry a power supply **ZILU Smart Power Basic 4400mAh Por
 
 Make sure that the charging port of the power supply is accessible so you could charge it without removing the upper deck. Also, when selecting the power supply for Google Vision AIY kit make sure it can provide at least 2.1 Amps as mentioned on Google Vision kit's website and have a capacity sufficient to run the kit for at least 20-30 minutes (capacity greater than 3000mAh should be fine.)
 
-<img width="800" height="600" src="images/Mount plate lower deck.jpg">
+<img width="400" height="300" src="images/Mount plate lower deck.jpg">
+<img width="400" height="300" src="images/Lower deck assembled.jpg">
+<img width="400" height="300" src="images/Lower deck bottom view.jpg">
