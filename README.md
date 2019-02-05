@@ -106,7 +106,11 @@ Double check that you connected the wires correctly - make sure that
 
 **Your robot is ready!** If you like you can use a rubber band to attach the (optional) **YI Action** or **Go Pro** camera to make FPV (First Person View) videos.
 
-| Schematics of LCC connections | Soldered LCC with connections |
+| Assembled robot (front view) | Assembled robot (left view) |
 |---------------------------------------------|----------------------| 
-| <img width="600" height="450" src="images/LLC_schematic1.jpg"> | <img width="300" height="400" src="images/Lower deck bottom view.jpg"> |
+| <img width="400" height="300" src="images/Robot front view.jpg"> | <img width="300" height="400" src="images/Robot_side_view_right1.jpg"> |
+
+| Assembled robot (right view) | Assembled robot (rear view) |
+|---------------------------------------------|----------------------| 
+| <img width="400" height="300" src="images/Robot_side_view_left.jpg"> | <img width="300" height="400" src="images/Robot_view_from_behind.jpg"> |
 
