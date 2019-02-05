@@ -78,14 +78,14 @@ Because Arduino is a 5 Volt device and Raspberry Pi of Google Vision AIY kit is 
 ### Arduino side: 
 I soldered three 3-Pin Breakaway Pin Headers to the car chassis (marked **UD4**, **UD3** and **UD5** on the chassis and on the image below) and then used three 3-pin 15cm Servo Extension Male-to-Male cables to connect those pin male headers to Logic Level Converter (Arduino or **HIGH** side of the LLC.)
 
-| Three 3-pin servo cables connecting Arduino pins with Logic Level Converter |
+| Three 3-pin servo cables connecting Arduino pins with LLC |
 |-----------------------------------------------------------------------------|
 | <img width="300" height="400" src="images/Arduino connections.jpg"> |
 
 ### Google Vision AIY kit side: 
 I used 6-pin Jumper Wire to connect GPIO expansion pins of Vision Bonnet to Logic Level Converter (Google Vision kit or **LOW** LLC side.)
 
-| 6-pin Jumper Wire connecting GPIO expansion pins of Google kit with Logic Level Converter |
+| 6-pin Jumper Wire connecting Google kit with LLC |
 |-------------------------------------------------------------------------------------------|
 | <img width="300" height="400" src="images/GPIO pins.jpg"> |
 
