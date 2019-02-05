@@ -42,4 +42,4 @@ Lower deck was used to carry a power supply **ZILU Smart Power Basic 4400mAh Por
 
 Make sure that the charging port of the power supply is accessible so you could charge it without removing the upper deck. Also, when selecting the power supply for Google Vision AIY kit make sure it can provide at least 2.1 Amps as mentioned on Google Vision kit's website and have a capacity sufficient to run the kit for at least 20-30 minutes (capacity greater than 3000mAh should be fine.)
 
-<img width="400" height="300" src="images/Mount plate upper deck.jpg"> | <img width="400" height="300" src="images/Mount plate lower deck.jpg"> | <img width="400" height="300" src="images/Lower deck assembled.jpg"> | <img width="400" height="300" src="images/Lower deck bottom view.jpg">
+| <img width="400" height="300" src="images/Mount plate upper deck.jpg"> | <img width="400" height="300" src="images/Mount plate lower deck.jpg"> | <img width="400" height="300" src="images/Lower deck assembled.jpg"> | <img width="400" height="300" src="images/Lower deck bottom view.jpg"> |
