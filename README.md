@@ -122,3 +122,5 @@ Double check that you connected the wires correctly - make sure that
 |------------|------------| 
 | <img width="400" height="300" src="Upper_and_low_decks.jpg"> | <img width="225" height="300" src="images/Robot with YI Action camera.jpg"> |
 
+
+
