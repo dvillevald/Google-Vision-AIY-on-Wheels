@@ -56,5 +56,5 @@ The output of face-detection model which runs on Vision Bonnet of Google Vision 
 
 | GPIO expansion pins of Vision Bonnet | GPIO expansion pins on the back of the kit |
 |---------------------------------------------|----------------------| 
-| <img width="400" height="300" src="images/gpio-top.png"> | <img width="400" height="300" src="images/GPIO pins.jpg"> |
+| <img width="400" height="300" src="images/gpio-top.png"> | <img width="300" height="400" src="images/GPIO pins.jpg"> |
 
