@@ -80,7 +80,7 @@ I soldered three 3-Pin Breakaway Pin Headers to the car chassis (marked **UD4**,
 
 | Three 3-pin servo cables connecting Arduino pins with Logic Level Converter |
 |-----------------------------------------------------------------------------|
-| <img width="400" height="300" src="images/Arduino connections.jpg"> |
+| <img width="300" height="400" src="images/Arduino connections.jpg"> |
 
 ### Google Vision AIY kit side: 
 I used 6-pin Jumper Wire to connect GPIO expansion pins of Vision Bonnet to Logic Level Converter (Google Vision kit or **LOW** LLC side.)
@@ -95,4 +95,4 @@ The following schematics shows how Logic Level Converter is connected to Arduino
 
 | Schematics of LCC connections | Soldered LCC with connections |
 |---------------------------------------------|----------------------| 
-| <img width="400" height="300" src="images/LLC_schematic1"> | <img width="300" height="400" src="images/Lower deck bottom view.jpg"> |
+| <img width="400" height="300" src="images/LLC_schematic1.jpg"> | <img width="300" height="400" src="images/Lower deck bottom view.jpg"> |
