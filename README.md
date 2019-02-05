@@ -59,7 +59,7 @@ Make sure that the charging port of the power supply is accessible so you could 
 
 The output of face-detection model which runs on Vision Bonnet of Google Vision AIY kit should be sent from Google Vision kit to Arduino so the car could act on it. The question is how to connect these two devices. A natural way would be to use a Serial port of Arduino and Data port of Google Vision kit. Unfortunately, communication via Serial port substantially slows down the face-detector which runs on Google Vision. Because of this I decided to design a communication protocol which uses 4 GPIO expansion pins (**PIN_A** to **PIN_D**) on the Vision Bonnet of Google Vision kit and 4 Arduino pins.
 
-| GPIO expansion pins of Vision Bonnet | GPIO expansion pins on the back of the kit |
+| GPIO expansion pins of Vision Bonnet | GPIO pins on the back of the kit |
 |---------------------------------------------|----------------------| 
 | <img width="400" height="300" src="images/gpio-top.png"> | <img width="225" height="300" src="images/GPIO pins.jpg"> |
 
