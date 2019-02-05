@@ -95,4 +95,4 @@ The following schematics shows how Logic Level Converter is connected to Arduino
 
 | Schematics of LCC connections | Soldered LCC with connections |
 |---------------------------------------------|----------------------| 
-| <img width="400" height="300" src="images/LLC_schematic1.jpg"> | <img width="300" height="400" src="images/Lower deck bottom view.jpg"> |
+| <img width="600" height="450" src="images/LLC_schematic1.jpg"> | <img width="300" height="400" src="images/Lower deck bottom view.jpg"> |
