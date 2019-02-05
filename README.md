@@ -108,7 +108,7 @@ Double check that you connected the wires correctly - make sure that
 
 | Assembled robot (front view) | Assembled robot (left view) |
 |---------------------------------------------|----------------------| 
-| <img width="400" height="300" src="images/Robot front view.jpg"> | <img width="300" height="400" src="images/Robot_side_view_right1.jpg"> |
+| <img width="300" height="400" src="images/Robot front view.jpg"> | <img width="300" height="400" src="images/Robot_side_view_right1.jpg"> |
 
 | Assembled robot (right view) | Assembled robot (rear view) |
 |---------------------------------------------|----------------------| 
