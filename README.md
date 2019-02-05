@@ -141,3 +141,15 @@ On Google Vision AIY kit's side it is implemented with gpiozero Python library's
 On Arduino side the best option to implement PWM is the library [PinChangeInterrupt](https://playground.arduino.cc/Main/PinChangeInterrupt) (make sure you install it) because it allows to measure the values of the duty cycle on any Arduino UNO pin, both digital and analog. It calculates the time in microseconds between the moment when the voltage on a particular pin changes from LOW to HIGH and the moment when it goes back from HIGH to LOW (named channel_length in the attached Arduino sketch My_robot_Arduino.ino) Once we know this number, we can calculate the value of duty cycle (which can vary from 0 to 1) as
 
 <img width="800" height="82" src="images/duty_cycle_calculation1.png">
+
+**Practical considerations:** I found that it is somewhat difficult to accurately detect the voltage changes from LOW to HIGH and back (or from HIGH to LOW and back) when the time interval between these two events is very short - the former case corresponds to the very low (close to 0) values of the duty cycles, the latter - to the very high (close to 1) values. Because of that I chose 0.1 and 0.9 for lower and upper bounds of duty cycles. In other words, all the values calculated by Google Vision AIY should be mapped into the [0.1, 0.9] range before they are sent to Arduino.
+
+## Coding and decoding values sent from Google AIY to Arduino
+
+As mentioned all values from Google Vision AIY should be mapped (coded) to [0.1, 0.9] range before they are sent to Arduino via pins with PWM. Once they are received by Arduino, the values should be decoded so Arduino "knows" the true which was calculated by Google Vision AIY. 
+
+The following describes the coding/decoding process I used.
+
+### Coding
+Determine min_value  and max_value - min and max values of the relevant variable calculated by AIY kit which you want to send to Arduino. For example, the smallest and largest angle between the direction the robot faces and the direction to the detected human face is determined by the parameters of the camera - focal length and horizontal camera resolution (both in pixels):
+
