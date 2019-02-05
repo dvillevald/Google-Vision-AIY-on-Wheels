@@ -114,3 +114,4 @@ Double check that you connected the wires correctly - make sure that
 |---------------------------------------------|----------------------| 
 | <img width="400" height="300" src="images/Robot_side_view_left.jpg"> | <img width="300" height="400" src="images/Robot_view_from_behind.jpg"> |
 
+
