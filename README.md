@@ -130,6 +130,11 @@ I designed the following communication protocol via the pins of Arduino and GPIO
 
 To send the analog values (like the direction or the distance to the detected human face) from Google Vision AIY kit to Arduino via the pins I used [Pulse Width Modulation](https://learn.sparkfun.com/tutorials/pulse-width-modulation/all), or PWM which is a technique for getting analog results with digital means. If a digital signal spends half of the time on (HIGH) and the other half off (LOW), we would say the digital signal has a **duty cycle** of 50% which resembles an ideal square wave. If the digital signal spends more time in the HIGH state than in the LOW state then the duty cycle will be greater than 50%. If the digital signal spends less time in the HIGH state than in the LOW state then the duty cycle will be less than 50%. The following graph illustrates these three scenarios:
  
-<img width="300" height="225" src="images/duty_cycle_image.jpg">
+<img width="400" height="300" src="images/duty_cycle_image.jpg">
 
 In order to send then the analog signal from Google AIY to Arduino the analog signal should be converted into a real number (a fraction) between 0 (LOW) to 1 (HIGH) and this number determines the value of the duty cycle - 50% duty cycle corresponds to transmitted value of 0.5, 25% duty cycle - to 0.25 and so on.
+
+On Google Vision AIY kit's side it is implemented with gpiozero Python library's function [PWMLED](https://gpiozero.readthedocs.io/en/stable/api_output.html?highlight=PWMLED#pwmled)
+
+On Arduino side the best option to implement PWM is the library [PinChangeInterrupt](https://playground.arduino.cc/Main/PinChangeInterrupt) (make sure you install it) because it allows to measure the values of the duty cycle on any Arduino UNO pin, both digital and analog. It calculates the time in microseconds between the moment when the voltage on a particular pin changes from LOW to HIGH and the moment when it goes back from HIGH to LOW (named channel_length in the attached Arduino sketch My_robot_Arduino.ino) Once we know this number, we can calculate the value of duty cycle (which can vary from 0 to 1) as
+
