@@ -34,12 +34,12 @@ I purchased **UNIROI Smart Robot Car Kit Arduino Robot Kit** on amazon.com which
 
 ## Adding Google Vision AIY kit
 
-I drilled two holes in the front part of the chassis (marked with red circles on the image above) and used plastic standoffs and screws to attach **plywood sheets** from Joann Fabrics (colored in black) which I used as mount plates for **Google Vision AIY kit**. The latter was attached to the upper deck with the **Camera Mounting Screw adapter**.
+I drilled two holes in the front part of the chassis (marked with red circles on the image above) and used plastic standoffs and screws to attach **plywood sheets** from Joann Fabrics (colored in black) which I used as mount plates for **Google Vision AIY kit** and other components. 
 
-<img width="800" height="600" src="images/Mount plate upper deck.jpg">
+The Google Vision AIY kit was attached to the upper deck with the **Camera Mounting Screw adapter**.
 
 Lower deck was used to carry a power supply **ZILU Smart Power Basic 4400mAh Portable Charger** for Google Vision AIY kit (attached with Velcro tape the top) and the **SparkFun Logic Level Converter** (at the bottom.) Bi-Directional Logic Level Converter was used to connect pins of Google Vision AIY kit with Arduino pins (more on this in the section Connecting Google Vision AIY kit with Arduino below.)
 
 Make sure that the charging port of the power supply is accessible so you could charge it without removing the upper deck. Also, when selecting the power supply for Google Vision AIY kit make sure it can provide at least 2.1 Amps as mentioned on Google Vision kit's website and have a capacity sufficient to run the kit for at least 20-30 minutes (capacity greater than 3000mAh should be fine.)
 
-<img width="400" height="300" src="images/Mount plate lower deck.jpg"> | <img width="400" height="300" src="images/Lower deck assembled.jpg"> | <img width="400" height="300" src="images/Lower deck bottom view.jpg">
+<img width="800" height="600" src="images/Mount plate upper deck.jpg"> | <img width="400" height="300" src="images/Mount plate lower deck.jpg"> | <img width="400" height="300" src="images/Lower deck assembled.jpg"> | <img width="400" height="300" src="images/Lower deck bottom view.jpg">
