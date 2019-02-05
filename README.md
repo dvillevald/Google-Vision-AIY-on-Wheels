@@ -116,11 +116,11 @@ Double check that you connected the wires correctly - make sure that
 
 | Upper deck | Lower deck |
 |------------|------------| 
-| <img width="400" height="300" src="Upper_deck.jpg"> | <img width="400" height="300" src="images/Lower_deck.jpg"> |
+| <img width="400" height="300" src="images/Upper_deck.jpg"> | <img width="400" height="300" src="images/Lower_deck.jpg"> |
 
 | Upper and lower decks | Robot with optional front camera |
 |------------|------------| 
-| <img width="400" height="300" src="Upper_and_low_decks.jpg"> | <img width="225" height="300" src="images/Robot with YI Action camera.jpg"> |
+| <img width="400" height="300" src="images/Upper_and_low_decks.jpg"> | <img width="225" height="300" src="images/Robot with YI Action camera.jpg"> |
 
 
 
