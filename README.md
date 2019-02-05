@@ -120,11 +120,10 @@ Double check that you connected the wires correctly - make sure that
 
 | Upper deck | Lower deck |
 |------------|------------| 
-| <img width="400" height="300" src="images/Upper_deck.jpg"> | <img width="400" height="300" src="images/Lower_deck.jpg"> |
-
-
+| <img width="300" height="225" src="images/Upper_deck.jpg"> | <img width="300" height="225" src="images/Lower_deck.jpg"> |
 
 ## Communication protocol 
 
 I designed the following communication protocol via the pins of Arduino and GPIO expansion pins of AIY kit's Vision Bonnet.
-<img src="images/Communication_channels.png">
+
+<img width="600" height="450" src="images/Communication_channels.png">
