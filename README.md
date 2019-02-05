@@ -132,7 +132,7 @@ To send the analog values (like the direction or the distance to the detected hu
  
 | Duty cycles (Source: Sparkfun.com) |
 |------------|
-| <img width="400" height="300" src="images/duty_cycle_image.jpg"> |
+| <img width="400" height="300" src="images/duty_cycle_image.JPG"> |
 
 In order to send then the analog signal from Google AIY to Arduino the analog signal should be converted into a real number (a fraction) between 0 (LOW) to 1 (HIGH) and this number determines the value of the duty cycle - 50% duty cycle corresponds to transmitted value of 0.5, 25% duty cycle - to 0.25 and so on.
 
