@@ -1,4 +1,7 @@
 # Google-Vision-AIY-on-Wheels
+
+<img width="800" height="600" src="images/Robot_side_view_left.jpg">
+
 ## Motivation
 After playing with Google Vision AIY kit I decided to put it on wheels and turn a cheap remote-controlled Arduino toy car kit into autonomous mobile Edge AI device. The new robot uses face-recognition model pre-installed on Google Vision AIY kit to search and approach faces or their images. Full documentation and methodology are provided in this tutorial. 
 This is the demo of the final product:
@@ -57,4 +60,16 @@ The output of face-detection model which runs on Vision Bonnet of Google Vision 
 | GPIO expansion pins of Vision Bonnet | GPIO expansion pins on the back of the kit |
 |---------------------------------------------|----------------------| 
 | <img width="400" height="300" src="images/gpio-top.png"> | <img width="300" height="400" src="images/GPIO pins.jpg"> |
+
+Analysis of chassis schematics and Arduino sketch uploaded to UNO R3 by a manufacturer (called *Comprehensive_Experiment.ino*) showed that all Arduino pins except for digital pin **#11** (**D11**) are used by car sensors, actuators and other devices. As I need 4 pins for communication, I removed three components:
+- Speaker (buzzer) connected to the digital pin **#12** (**D12**); and
+- Two line tracking sensors installed on the bottom of the car which were connected to analog pins **A2** and **A3** of Arduino UNO R3. 
+
+I also removed (unplugged) a Bluetooth module as I did not plan to use it.
+
+This gave me 4 pins (D11, D12, A2 and A3) for communication with 4 GPIO expansion pins (PIN_A, PIN_B, PIN_C and PIN_D) of Vision Bonnet of Google Vision AIY kit.
+
+## Logic Level Converter
+
+Because Arduino is a 5 Volt device and Raspberry Pi of Google Vision AIY kit is a 3.3 Volt device and because we want to use 4 pins for communication, we would need a **4-channel Level Logic Converter (or LLC)**.
 
