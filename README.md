@@ -28,6 +28,10 @@ Please use common sense and be careful when playing with this robot - it is sear
 - [YI Action Camera (Optional)](https://www.amazon.com/YI-Action-Camera-US-White/dp/B016EIGEGU)
 
 ## Robot Chassis
-I purchased **UNIROI Smart Robot Car Kit Arduino Robot Kit** on amazon.com which comes with Arduino UNO R3 board and documentation including chassis schematics, assembly instructions and Arduino sketch *Comprehensive_Experiment.ino* uploaded to UNO R3 by a manufacturers (located is /arduino folder.)
+I purchased **UNIROI Smart Robot Car Kit Arduino Robot Kit** on amazon.com which comes with Arduino UNO R3 board and documentation including chassis schematics, assembly instructions and Arduino sketch *Comprehensive_Experiment.ino* uploaded to UNO R3 by a manufacturers (located in **/arduino** folder.)
 
-<img src="images/chassis_with_drilled_holes.jpg">
+<img src="images/chassis_with_drilled_holes.jpg" title="xxx">
+
+## Adding Google Vision AIY kit
+
+I drilled two holes in the front part of the chassis (marked with red circles on the image above) and used plastic standoffs and screws to attach plywood sheets from Joann Fabrics (colored in black) which I used as mount plates for Google Vision AIY kit. The latter was attached to the upper deck with Camera Mounting Screw adapter.
