@@ -112,6 +112,8 @@ Double check that you connected the wires correctly - make sure that
 
 | Assembled robot (right view) | Assembled robot (rear view) |
 |---------------------------------------------|----------------------| 
-| <img width="400" height="300" src="images/Robot_side_view_left.jpg"> | <img width="300" height="400" src="images/Robot_view_from_behind.jpg"> |
+| <img width="400" height="300" src="images/Robot_side_view_left.jpg"> | <img width="225" height="300" src="images/Robot_view_from_behind.jpg"> |
 
-
+| Upper deck | Lower deck |
+|---------------------------------------------|----------------------| 
+| <img width="400" height="300" src="Upper_deck.jpg"> | <img width="300" height="400" src="images/Lower_deck.jpg"> |
