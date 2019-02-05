@@ -114,15 +114,18 @@ Double check that you connected the wires correctly - make sure that
 |------------------------------|-----------------------------| 
 | <img width="400" height="300" src="images/Robot_side_view_left.jpg"> | <img width="225" height="300" src="images/Robot_view_from_behind.jpg"> |
 
+| Upper and lower decks | Robot with optional front camera |
+|------------|------------| 
+| <img width="400" height="300" src="images/Upper_and_low_decks.jpg"> | <img width="225" height="300" src="images/Robot with YI Action camera.jpg"> |
+
 | Upper deck | Lower deck |
 |------------|------------| 
 | <img width="400" height="300" src="images/Upper_deck.jpg"> | <img width="400" height="300" src="images/Lower_deck.jpg"> |
 
-| Upper and lower decks | Robot with optional front camera |
-|------------|------------| 
-| <img width="400" height="300" src="images/Upper_and_low_decks.jpg"> | <img width="225" height="300" src="images/Robot with YI Action camera.jpg"> |
+
 
 ## Communication protocol 
 
 I designed the following communication protocol via the pins of Arduino and GPIO expansion pins of AIY kit's Vision Bonnet.
 
+<img width="600" height="450" src="images/LLC_schematic2.jpg">
