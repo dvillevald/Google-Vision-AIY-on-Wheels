@@ -140,4 +140,4 @@ On Google Vision AIY kit's side it is implemented with gpiozero Python library's
 
 On Arduino side the best option to implement PWM is the library [PinChangeInterrupt](https://playground.arduino.cc/Main/PinChangeInterrupt) (make sure you install it) because it allows to measure the values of the duty cycle on any Arduino UNO pin, both digital and analog. It calculates the time in microseconds between the moment when the voltage on a particular pin changes from LOW to HIGH and the moment when it goes back from HIGH to LOW (named channel_length in the attached Arduino sketch My_robot_Arduino.ino) Once we know this number, we can calculate the value of duty cycle (which can vary from 0 to 1) as
 
-<img width="400" height="300" src="images/duty_cycle.png">
+<img width="400" height="300" src="images/duty_cycle_calculation1.png">
