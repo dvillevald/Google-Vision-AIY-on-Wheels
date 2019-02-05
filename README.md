@@ -45,6 +45,7 @@ Make sure that the charging port of the power supply is accessible so you could 
 | Upper deck with mount screw for Google kit | Lower deck with attached power bank |
 |--------------------------------------------|-------------------------------------|
 | <img width="400" height="300" src="images/Mount plate upper deck.jpg"> | <img width="400" height="300" src="images/Mount plate lower deck.jpg"> | 
+
 | Lower deck with PCB (bottom view) with PCB board with LLC) | Lower deck assembled |
-|----------------------------|----------------| 
+|------------------------------------------------------------|----------------------| 
 | <img width="400" height="300" src="images/Lower deck bottom view.jpg"> | <img width="400" height="300" src="images/Lower deck assembled.jpg"> |
