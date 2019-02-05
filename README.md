@@ -130,9 +130,6 @@ I designed the following communication protocol via the pins of Arduino and GPIO
 
 To send the analog values (like the direction or the distance to the detected human face) from Google Vision AIY kit to Arduino via the pins I used [Pulse Width Modulation](https://learn.sparkfun.com/tutorials/pulse-width-modulation/all), or PWM which is a technique for getting analog results with digital means. If a digital signal spends half of the time on (HIGH) and the other half off (LOW), we would say the digital signal has a **duty cycle** of 50% which resembles an ideal square wave. If the digital signal spends more time in the HIGH state than in the LOW state then the duty cycle will be greater than 50%. If the digital signal spends less time in the HIGH state than in the LOW state then the duty cycle will be less than 50%. The following graph illustrates these three scenarios:
  
-<img width="300" height="225" src="images/Upper_deck.jpg">
+<img width="300" height="225" src="images/duty_cycle_image.jpg">
 
 In order to send then the analog signal from Google AIY to Arduino the analog signal should be converted into a real number (a fraction) between 0 (LOW) to 1 (HIGH) and this number determines the value of the duty cycle - 50% duty cycle corresponds to transmitted value of 0.5, 25% duty cycle - to 0.25 and so on.
-
-
-<img width="300" height="225" src="images/Upper_deck.jpg">
