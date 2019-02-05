@@ -127,5 +127,4 @@ Double check that you connected the wires correctly - make sure that
 ## Communication protocol 
 
 I designed the following communication protocol via the pins of Arduino and GPIO expansion pins of AIY kit's Vision Bonnet.
-
 <img src="images/LLC_schematic2.jpg">
