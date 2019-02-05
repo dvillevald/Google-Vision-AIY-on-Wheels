@@ -61,7 +61,7 @@ The output of face-detection model which runs on Vision Bonnet of Google Vision 
 
 | GPIO expansion pins of Vision Bonnet | GPIO expansion pins on the back of the kit |
 |---------------------------------------------|----------------------| 
-| <img width="400" height="300" src="images/gpio-top.png"> | <img width="300" height="400" src="images/GPIO pins.jpg"> |
+| <img width="400" height="300" src="images/gpio-top.png"> | <img width="225" height="300" src="images/GPIO pins.jpg"> |
 
 Analysis of chassis schematics and Arduino sketch uploaded to UNO R3 by a manufacturer (called *Comprehensive_Experiment.ino*) showed that all Arduino pins except for digital pin **#11** (**D11**) are used by car sensors, actuators and other devices. As I need 4 pins for communication, I removed three components:
 - Speaker (buzzer) connected to the digital pin **#12** (**D12**); and
