@@ -76,15 +76,23 @@ This gave me 4 pins (D11, D12, A2 and A3) for communication with 4 GPIO expansio
 Because Arduino is a 5 Volt device and Raspberry Pi of Google Vision AIY kit is a 3.3 Volt device and because we want to use 4 pins for communication, we would need a **4-channel Level Logic Converter (or LLC)**.
 
 ### Arduino side: 
-I soldered three 3-Pin Breakaway Pin Headers to the car chassis (marked **UD4**, **UD3** and **UD5** on the chassis and on the image below) and then used three **3-pin 15cm Servo Extension Male-to-Male cables** to connect those pin male headers to Logic Level Converter (Arduino or *HIGH* side of the LLC.)
+I soldered three 3-Pin Breakaway Pin Headers to the car chassis (marked **UD4**, **UD3** and **UD5** on the chassis and on the image below) and then used three 3-pin 15cm Servo Extension Male-to-Male cables to connect those pin male headers to Logic Level Converter (Arduino or **HIGH** side of the LLC.)
 
 | Three 3-pin servo cables connecting Arduino pins with Logic Level Converter |
 |-----------------------------------------------------------------------------|
 | <img width="400" height="300" src="images/Arduino connections.jpg"> |
 
 ### Google Vision AIY kit side: 
-I used 6-pin Jumper Wire to connect GPIO expansion pins of Vision Bonnet to Logic Level Converter (Google Vision kit or *LOW* LLC side.)
+I used 6-pin Jumper Wire to connect GPIO expansion pins of Vision Bonnet to Logic Level Converter (Google Vision kit or **LOW** LLC side.)
 
 | 6-pin Jumper Wire connecting GPIO expansion pins of Google kit with Logic Level Converter |
 |-------------------------------------------------------------------------------------------|
 | <img width="300" height="400" src="images/GPIO pins.jpg"> |
+
+**IMPORTANT:** To avoid damaging your boards make sure that you connect all cables correctly to both devices and to the Logic Level Converter!
+
+The following schematics shows how Logic Level Converter is connected to Arduino (**H** or HIGH side of LLC) and Google Vision (**L** or LOW side of LLC.)
+
+| Schematics of LCC connections | Soldered LCC with connections |
+|---------------------------------------------|----------------------| 
+| <img width="400" height="300" src="images/LLC_schematic1"> | <img width="300" height="400" src="images/Lower deck bottom view.jpg"> |
