@@ -29,3 +29,5 @@ Please use common sense and be careful when playing with this robot - it is sear
 
 ## Robot Chassis
 I purchased UNIROI Smart Robot Car Kit Arduino Robot Kit on amazon.com which comes with Arduino UNO R3 board and documentation including chassis schematics, assembly instructions and Arduino sketch Comprehensive_Experiment.ino uploaded to UNO R3 by a manufacturers (attached.)
+
+<img width="245" height="326" src="images/chassis_with_drilled_holes.JPG">
