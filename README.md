@@ -151,6 +151,18 @@ As mentioned all values from Google Vision AIY should be mapped (coded) to [0.1,
 The following describes the coding/decoding process I used.
 
 ### Coding
-Determine min_value  and max_value - min and max values of the relevant variable calculated by AIY kit which you want to send to Arduino. For example, the smallest and largest angle between the direction the robot faces and the direction to the detected human face is determined by the parameters of the camera - focal length and horizontal camera resolution (both in pixels):
+--Determine min_value  and max_value - min and max values of the relevant variable calculated by AIY kit which you want to send to Arduino. For example, the smallest and largest angle between the direction the robot faces and the direction to the detected human face is determined by the parameters of the camera - focal length and horizontal camera resolution (both in pixels):
 
-<img width="800" height="82" src="images/atans.png">
+<img width="680" height="240" src="images/atans.png">
+
+--Once you determined min_value  and max_value, make sure that the values Google AIY calculates are clamped - values lower than min_value and higher than max_value are assigned min_value  and max_value correspondingly.
+--Once you receive the calculated value (angle in this example) from Google AIY (and clamp it to [min_value, max_value] range if necessary), apply the following formula to calculate the value of angle which should be sent from Google Vision AIY to Arduino (i.e. coded value):
+
+<img width="680" height="68" src="images/coded_value.png">
+
+You can check that when **angle = min_angle** (which corresponds to the case when a face is detected in the leftmost part of the image), Arduino will receive the value of 0.1; when **angle = max_angle** (face detected in the rightmost part of the image) Arduino will receive the value of 0.9
+The coding should of course be performed on Google AIY side (i.e. in Python script **my_robot.py** which runs on AIY.)    
+
+### Decoding
+
+Once Arduino receives the coded value (Angle to send to Arduino), Arduino should decode it back to the original value (angle) by using formula very similar to the one above:
