@@ -245,4 +245,10 @@ To power down the devices simply turn of  the white power switch on robot chassi
 
 I really enjoyed dong this project and would appreciate your feedback. There are many interesting project based on this platform - one can design a better (PID) controller to drive the robot toward the goal, one can fuse information from Google Vision AIY kit camera with the data from the installed on the car ultra-sound and infrared sensors; one can try different model to avoid obstacles. If you decide to do this project please keep me posted on your progress.
 
-**THANK YOU!**
+## Bonus video
+
+<a href="https://youtu.be/992VRxzRjws
+" target="_blank"><img src="https://img.youtube.com/vi/992VRxzRjws/0.jpg" 
+alt="Google Vision AIY Kit on Wheels" width="480" height="360" border="10" /></a>
+
+## Thank you!
