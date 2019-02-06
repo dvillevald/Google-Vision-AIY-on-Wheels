@@ -222,7 +222,15 @@ After this try to reboot the kit - the service should run at bootup.
 
 ## Installation: Arduino side
 Upload sketch **my_robot_Arduino.ino** to Arduino UNO R3. Basically this sketch replaces Bluetooth functionality with autonomous feature to search for and approach detected human faces or their images. I did not change the other parts of the original code which comes with the toy - the functions for the autonomous mode which I added are 
-- search_and_approach - main pipeline which processes data from Google Vision AIY kit and drives the autonomous robot; and
-- print_robot_state - optional function useful for debugging which, if called, sends robot state and the data coming from the Google Vision AIY kit to Arduino Serial monitor.
+- **search_and_approach** - main pipeline which processes data from Google Vision AIY kit and drives the autonomous robot; and
+- **print_robot_state** - optional function useful for debugging which, if called, sends robot state and the data coming from the Google Vision AIY kit to Arduino Serial monitor.
 
 Make sure you install Arduino libraries **PinChangeInterrupt** and **IRremote**.
+
+## Powering up the devices
+
+It is not critical in which order to power up Google Vision AIY kit and Arduino/Chassis. I usually start Google AIY first and once LED blinks BLUE I power up the Chassis.
+
+A default mode after powering up the car is control via infrared remote which comes with the kit. To change it to autonomous face-chasing mode push the **KEY1** button (located next to Arduino and rear left wheel of the robot - you can see it on the video or on the image below.)
+
+<img width="225" height="300" src="images/KEY1x.jpg">
