@@ -207,11 +207,13 @@ Once you are comfortable with the script and it works you can create a service w
  ```
  
 ```
-# copy my_robot.service to system folder
+**# copy my_robot.service to system folder**
 sudo cp ~/AIY-projects-python/src/examples/robot/my_robot.service /lib/systemd/system/my_robot.service
-# Reload the service files so the system knows about this new one
+
+**# Reload the service files so the system knows about this new one**
 sudo systemctl daemon-reload
-# Enable my_robot service to run on bootup
+
+**# Enable my_robot service to run on bootup**
 sudo systemctl enable my_program.service
 ```
 
