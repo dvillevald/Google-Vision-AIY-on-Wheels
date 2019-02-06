@@ -161,8 +161,30 @@ The following describes the coding/decoding process I used.
 <img width="680" height="68" src="images/coded_value.png">
 
 You can check that when **angle = min_angle** (which corresponds to the case when a face is detected in the leftmost part of the image), Arduino will receive the value of 0.1; when **angle = max_angle** (face detected in the rightmost part of the image) Arduino will receive the value of 0.9
+
 The coding should of course be performed on Google AIY side (i.e. in Python script **my_robot.py** which runs on AIY.)    
 
 ### Decoding
 
 Once Arduino receives the coded value (Angle to send to Arduino), Arduino should decode it back to the original value (angle) by using formula very similar to the one above:
+
+<img width="680" height="68" src="images/decoded_value.png">
+
+This decoding should be performed by Arduino (in Arduino sketch **my_robot_Arduino.ino**) but, of course, to ensure the correct decoding the values of min_angle and max_value should be the same in Python script ran on Google AIY and in the sketch ran on Arduino.
+
+The section above explains in details the entire communication on the Channel # 1 (**PIN_A** of Google AIY to pin **D11** of Arduino) which is used to send the angle between the direction which robot faces and the direction to the detected human face from Google AIY to Arduino.
+
+Channel # 2 (**PIN_B** of Google AIY to pin **D12** of Arduino) and Channel # 3 (**PIN_D** of Google AIY to pin **A3** of Arduino) uses a very similar coding/decoding logic. The only difference is that for the Channel # 2 the lower bound for the coded value is 0.2 (not 0.1) The reason for that is because Channel # 2 is used for two purposes - to send the approximate distance to the detected face in inches if the face is detected (values between 0.2 and 0.9) OR to let Arduino know that no face is detected (in the latter case value of 0.1 is sent.) 
+
+For Channel # 3 it is not critical to decode the values exactly - its main goal is to monitor a "health" of the face detector running on Google Vision AIY kit and to make sure that Arduino does not act on the same information (i.e. on the data from the same frame) twice. Because of this unlike Channels #1 and #2 it is not important what the actual values received by Arduino via Channel #3 are. The only thing which is important is that two successive values received by Arduino should be *different*.
+
+Channel # 4 (**PIN_D** of Google AIY to pin **A2** of Arduino) is not used for sending values via PWM - actually it communicated in the opposite direction. It simply sends HIGH value from Arduino to Google AIY when Arduino is powered and LOW when Arduino's power is off. It is used for a safe shutdown of Google Vision AIY kit. 
+
+Installation: Google Vision AIY kit side
+
+I used Version 1.1 of Google Vision kit from Target with flashed **2018-11-16** [image](https://aiyprojects.withgoogle.com/vision/#more-info--system-updates). 
+
+After you power up the kit, create the folder 
+/home/pi/AIY-projects-python/src/examples/robot
+
+Place the Python script **my_robot.py** into this new folder and set file's **Properties** so it can be executed by *Anyone*. I had some issues with RPi.GPIO (Error message *GPIO pin is already in use*) but when I run script with **sudo** I don't have this problem so navigate to the new folder and start the script:
