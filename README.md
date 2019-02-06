@@ -153,3 +153,4 @@ The following describes the coding/decoding process I used.
 ### Coding
 Determine min_value  and max_value - min and max values of the relevant variable calculated by AIY kit which you want to send to Arduino. For example, the smallest and largest angle between the direction the robot faces and the direction to the detected human face is determined by the parameters of the camera - focal length and horizontal camera resolution (both in pixels):
 
+<img width="800" height="82" src="images/atans.png">
