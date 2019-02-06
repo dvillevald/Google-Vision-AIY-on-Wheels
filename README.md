@@ -185,6 +185,8 @@ Installation: Google Vision AIY kit side
 I used Version 1.1 of Google Vision kit from Target with flashed **2018-11-16** [image](https://aiyprojects.withgoogle.com/vision/#more-info--system-updates). 
 
 After you power up the kit, create the folder 
-/home/pi/AIY-projects-python/src/examples/robot
+ ```
+ /home/pi/AIY-projects-python/src/examples/robot 
+ ```
 
 Place the Python script **my_robot.py** into this new folder and set file's **Properties** so it can be executed by *Anyone*. I had some issues with RPi.GPIO (Error message *GPIO pin is already in use*) but when I run script with **sudo** I don't have this problem so navigate to the new folder and start the script:
