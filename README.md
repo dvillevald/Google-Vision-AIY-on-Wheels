@@ -234,3 +234,15 @@ It is not critical in which order to power up Google Vision AIY kit and Arduino/
 A default mode after powering up the car is control via infrared remote which comes with the kit. To change it to autonomous face-chasing mode push the **KEY1** button (located next to Arduino and rear left wheel of the robot - you can see it on the video or on the image below.)
 
 <img width="225" height="300" src="images/KEY1x.jpg">
+
+Once autonomous mode is activated, robot will rotate looking for the faces around. Once it detects the face, it will correct its pose and start driving toward the face. If it loses the face, robot will scan the environment in the direction where the face was detected last time. To help the robot with detection make sure you have enough light in the room, especially if the faces are far away from the robot. If the robot detects multiple faces it will select the largest one. However, if there are many people in the room and robot will detect multiples faces of about the same size, the robot may got confused. Note that you can always change the mode back to the one with infrared remote control (non-autonomous) by pushing **KEY1** button again.
+
+## Safe shutdown of Google Vision AIY kit
+
+To power down the devices simply turn of  the white power switch on robot chassis. Once Arduino/Chassis don't have power, Google Vision kit would wait for 10 frames (about 5-7 seconds) and then LED on the top of the Google Vision AIY kit with blink 10 times with RED and Google AIY kit will go into safe shutdown mode. If you powered down Chassis by accident, you have those 5-7 second to power Chassis up again before Google Vision kit starts shut down process.
+
+## Conclusion
+
+I really enjoyed dong this project and would appreciate your feedback. There are many interesting project based on this platform - one can design a better (PID) controller to drive the robot toward the goal, one can fuse information from Google Vision AIY kit camera with the data from the installed on the car ultra-sound and infrared sensors; one can try different model to avoid obstacles. If you decide to do this project please keep me posted on your progress.
+
+**THANK YOU!**
