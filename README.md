@@ -190,3 +190,29 @@ After you power up the kit, create the folder
  ```
 
 Place the Python script **my_robot.py** into this new folder and set file's **Properties** so it can be executed by *Anyone*. I had some issues with RPi.GPIO (Error message *GPIO pin is already in use*) but when I run script with **sudo** I don't have this problem so navigate to the new folder and start the script:
+
+```
+cd /src/examples/robot
+sudo ./my_robot.py
+```
+
+Once the LED on the top of the Google Vision kit start blinking (with BLUE) the face detector is running. I found it very useful to show the detector the image of human face from the magazine. When the face is detected the LED on the top of the kit will be GREEN.
+Once you are comfortable with the script and it works you can create a service which would run this script at bootup which is very useful for real time applications like this. Google explains well on the [Google Vision's home page](https://aiyprojects.withgoogle.com/vision/#makers-guide--run-your-app-at-bootup) how to create and enable the service. However, I had some problems with permissions and could not make symlink work. So I created the service file **my_robot.service** (attached), placed it in
+ ```
+/home/pi/AIY-projects-python/src/examples/robot
+ ```
+ and then sudo-copied it to
+ ```
+~/Programs/my_program.service /lib/systemd/system
+ ```
+ 
+```
+# copy my_robot.service to system folder
+sudo cp ~/AIY-projects-python/src/examples/robot/my_robot.service /lib/systemd/system/my_robot.service
+# Reload the service files so the system knows about this new one
+sudo systemctl daemon-reload
+# Enable my_robot service to run on bootup
+sudo systemctl enable my_program.service
+```
+
+After this try to reboot the kit - the service should run at bootup. 
