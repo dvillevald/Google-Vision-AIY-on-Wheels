@@ -180,7 +180,7 @@ For Channel # 3 it is not critical to decode the values exactly - its main goal 
 
 Channel # 4 (**PIN_D** of Google AIY to pin **A2** of Arduino) is not used for sending values via PWM - actually it communicated in the opposite direction. It simply sends HIGH value from Arduino to Google AIY when Arduino is powered and LOW when Arduino's power is off. It is used for a safe shutdown of Google Vision AIY kit. 
 
-Installation: Google Vision AIY kit side
+## Installation: Google Vision AIY kit side
 
 I used Version 1.1 of Google Vision kit from Target with flashed **2018-11-16** [image](https://aiyprojects.withgoogle.com/vision/#more-info--system-updates). 
 
@@ -202,19 +202,27 @@ Once you are comfortable with the script and it works you can create a service w
 /home/pi/AIY-projects-python/src/examples/robot
  ```
  and then sudo-copied it to
+ 
  ```
 ~/Programs/my_program.service /lib/systemd/system
  ```
  
 ```
-**# copy my_robot.service to system folder**
+# copy my_robot.service to system folder
 sudo cp ~/AIY-projects-python/src/examples/robot/my_robot.service /lib/systemd/system/my_robot.service
 
-**# Reload the service files so the system knows about this new one**
+# Reload the service files so the system knows about this new one
 sudo systemctl daemon-reload
 
-**# Enable my_robot service to run on bootup**
+# Enable my_robot service to run on bootup
 sudo systemctl enable my_program.service
 ```
 
 After this try to reboot the kit - the service should run at bootup. 
+
+## Installation: Arduino side
+Upload sketch **my_robot_Arduino.ino** to Arduino UNO R3. Basically this sketch replaces Bluetooth functionality with autonomous feature to search for and approach detected human faces or their images. I did not change the other parts of the original code which comes with the toy - the functions for the autonomous mode which I added are 
+- search_and_approach - main pipeline which processes data from Google Vision AIY kit and drives the autonomous robot; and
+- print_robot_state - optional function useful for debugging which, if called, sends robot state and the data coming from the Google Vision AIY kit to Arduino Serial monitor.
+
+Make sure you install Arduino libraries **PinChangeInterrupt** and **IRremote**.
