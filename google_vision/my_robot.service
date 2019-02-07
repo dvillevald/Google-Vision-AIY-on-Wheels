@@ -1,0 +1,17 @@
+[Unit]
+Description=AIY Face Searching and Approaching Robot
+Requires=dev-vision_spicomm.device
+After=dev-vision_spicomm.device
+Wants=aiy-board-info.service
+After=aiy-board-info.service
+
+[Service]
+Type=simple
+Restart=yes
+User=pi
+Environment=AIY_BOARD_NAME=AIY-Board
+EnvironmentFile=-/run/aiy-board-info
+ExecStart=/usr/bin/sudo /usr/bin/python3 /home/pi/AIY-projects-python/src/examples/robot/my_robot.py
+
+[Install]
+WantedBy=multi-user.target
