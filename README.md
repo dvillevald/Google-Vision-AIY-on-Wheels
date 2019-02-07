@@ -251,4 +251,6 @@ I really enjoyed doing this project and would appreciate your feedback. There ar
 " target="_blank"><img src="https://img.youtube.com/vi/992VRxzRjws/0.jpg" 
 alt="Google Vision AIY Kit on Wheels" width="480" height="360" border="10" /></a>
 
+You can also find this tutorial on [hackster.io](https://www.hackster.io/dvillevald/autonomous-rover-google-vision-aiy-kit-on-wheels)
+
 ## Thank you!
