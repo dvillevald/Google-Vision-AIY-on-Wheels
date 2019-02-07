@@ -161,7 +161,7 @@ The following describes the coding/decoding process I used.
 
 You can check that when **angle = min_angle** (which corresponds to the case when a face is detected in the leftmost part of the image), Arduino will receive the value of 0.1; when **angle = max_angle** (face detected in the rightmost part of the image) Arduino will receive the value of 0.9
 
-The coding should of course be performed on Google AIY side (i.e. in Python script **my_robot.py** which runs on AIY.)    
+The coding should, of course be performed, on Google AIY side (in Python script **my_robot.py** which runs on AIY.)    
 
 ### Decoding
 
@@ -169,34 +169,35 @@ Once Arduino receives the coded value (Angle to send to Arduino), Arduino should
 
 <img width="680" height="68" src="images/decoded_value.png">
 
-This decoding should be performed by Arduino (in Arduino sketch **my_robot_Arduino.ino**) but, of course, to ensure the correct decoding the values of min_angle and max_value should be the same in Python script ran on Google AIY and in the sketch ran on Arduino.
+This decoding should be performed by Arduino (in Arduino sketch **my_robot_Arduino.ino**) but, of course, to ensure the correct decoding the values of min_angle and max_value should be the same in Python script running on Google AIY and in the sketch running on Arduino.
 
 The section above explains in details the entire communication on the Channel # 1 (**PIN_A** of Google AIY to pin **D11** of Arduino) which is used to send the angle between the direction which robot faces and the direction to the detected human face from Google AIY to Arduino.
 
 Channel # 2 (**PIN_B** of Google AIY to pin **D12** of Arduino) and Channel # 3 (**PIN_D** of Google AIY to pin **A3** of Arduino) uses a very similar coding/decoding logic. The only difference is that for the Channel # 2 the lower bound for the coded value is 0.2 (not 0.1) The reason for that is because Channel # 2 is used for two purposes - to send the approximate distance to the detected face in inches if the face is detected (values between 0.2 and 0.9) OR to let Arduino know that no face is detected (in the latter case value of 0.1 is sent.) 
 
-For Channel # 3 it is not critical to decode the values exactly - its main goal is to monitor a "health" of the face detector running on Google Vision AIY kit and to make sure that Arduino does not act on the same information (i.e. on the data from the same frame) twice. Because of this unlike Channels #1 and #2 it is not important what the actual values received by Arduino via Channel #3 are. The only thing which is important is that two successive values received by Arduino should be *different*.
+For Channel # 3 decoding the values exactly is not critical - the main goal is to monitor a "health" of the face detector running on Google Vision AIY kit and to make sure that Arduino does not act on the same information (i.e. on the data from the same frame) twice. Because of this unlike Channels #1 and #2 it is not important what the actual values received by Arduino via Channel #3 are. The only thing which is important is that two successive values received by Arduino should be *different*.
 
-Channel # 4 (**PIN_D** of Google AIY to pin **A2** of Arduino) is not used for sending values via PWM - actually it communicated in the opposite direction. It simply sends HIGH value from Arduino to Google AIY when Arduino is powered and LOW when Arduino's power is off. It is used for a safe shutdown of Google Vision AIY kit. 
+Channel # 4 (**PIN_D** of Google AIY to pin **A2** of Arduino) is not used for sending values via PWM - actually, it communicates in the opposite direction. It simply sends HIGH value from Arduino to Google AIY when Arduino is powered and LOW when Arduino's power is off. It is used for a safe shutdown of Google Vision AIY kit. 
 
 ## Installation: Google Vision AIY kit side
 
-I used Version 1.1 of Google Vision kit from Target with flashed **2018-11-16** [image](https://aiyprojects.withgoogle.com/vision/#more-info--system-updates). 
+I used Version 1.1 of Google Vision kit from Target with a flashed **2018-11-16** [image](https://aiyprojects.withgoogle.com/vision/#more-info--system-updates). 
 
 After you power up the kit, create the folder 
  ```
  /home/pi/AIY-projects-python/src/examples/robot 
  ```
 
-Place the Python script **my_robot.py** into this new folder and set file's **Properties** so it can be executed by *Anyone*. I had some issues with RPi.GPIO (Error message *GPIO pin is already in use*) but when I run script with **sudo** I don't have this problem so navigate to the new folder and start the script:
+Place the Python script **my_robot.py** into this new folder and set file's **Properties** so it can be executed by *Anyone*. I had some issues with RPi.GPIO (Error message *GPIO pin is already in use*) but when I run the script with **sudo** I don't have this problem so navigate to the new folder and start the script:
 
 ```
 cd /src/examples/robot
 sudo ./my_robot.py
 ```
 
-Once the LED on the top of the Google Vision kit start blinking (with BLUE) the face detector is running. I found it very useful to show the detector the image of human face from the magazine. When the face is detected the LED on the top of the kit will be GREEN.
-Once you are comfortable with the script and it works you can create a service which would run this script at bootup which is very useful for real time applications like this. Google explains well on the [Google Vision's home page](https://aiyprojects.withgoogle.com/vision/#makers-guide--run-your-app-at-bootup) how to create and enable the service. However, I had some problems with permissions and could not make symlink work. So I created the service file **my_robot.service** (attached), placed it in
+Once the LED on the top of the Google Vision kit start blinking (with BLUE) the face detector is running. I found it very useful to show the detector the image of a human face from the magazine. When the face has detected the LED on the top of the kit will be GREEN.
+
+Once you are comfortable with the script and it works you can create a service which would run this script at bootup which is very useful for real-time applications like this. Google explains well on the [Google Vision's home page](https://aiyprojects.withgoogle.com/vision/#makers-guide--run-your-app-at-bootup) how to create and enable the service. However, I had some problems with permissions and could not make symlink work. So I created the service file **my_robot.service** (attached), placed it in
  ```
 /home/pi/AIY-projects-python/src/examples/robot
  ```
@@ -220,7 +221,7 @@ sudo systemctl enable my_program.service
 After this try to reboot the kit - the service should run at bootup. 
 
 ## Installation: Arduino side
-Upload sketch **my_robot_Arduino.ino** to Arduino UNO R3. Basically this sketch replaces Bluetooth functionality with autonomous feature to search for and approach detected human faces or their images. I did not change the other parts of the original code which comes with the toy - the functions for the autonomous mode which I added are 
+Upload sketch **my_robot_Arduino.ino** to Arduino UNO R3. Basically, this sketch replaces Bluetooth functionality with an autonomous mode - to search for and approach detected human faces or their images. I did not change the other parts of the original code which comes with the toy - the functions for the autonomous mode which I added are 
 - **search_and_approach** - main pipeline which processes data from Google Vision AIY kit and drives the autonomous robot; and
 - **print_robot_state** - optional function useful for debugging which, if called, sends robot state and the data coming from the Google Vision AIY kit to Arduino Serial monitor.
 
@@ -230,19 +231,19 @@ Make sure you install Arduino libraries **PinChangeInterrupt** and **IRremote**.
 
 It is not critical in which order to power up Google Vision AIY kit and Arduino/Chassis. I usually start Google AIY first and once LED blinks BLUE I power up the Chassis.
 
-A default mode after powering up the car is control via infrared remote which comes with the kit. To change it to autonomous face-chasing mode push the **KEY1** button (located next to Arduino and rear left wheel of the robot - you can see it on the video or on the image below.)
+A default mode (after powering up) is the IR-remote-controlled car (remote control is included in the kit.) To change it to an autonomous face-chasing mode push the **KEY1** button (located next to Arduino and rear left wheel of the robot - you can see it on the video or on the image below.)
 
 <img width="225" height="300" src="images/KEY1x.jpg">
 
-Once autonomous mode is activated, robot will rotate looking for the faces around. Once it detects the face, it will correct its pose and start driving toward the face. If it loses the face, robot will scan the environment in the direction where the face was detected last time. To help the robot with detection make sure you have enough light in the room, especially if the faces are far away from the robot. If the robot detects multiple faces it will select the largest one. However, if there are many people in the room and robot will detect multiples faces of about the same size, the robot may got confused. Note that you can always change the mode back to the one with infrared remote control (non-autonomous) by pushing **KEY1** button again.
+Once an autonomous mode is activated, the robot will rotate looking for the faces around. Once it detects the face, it will correct its pose and start driving toward the face. If it loses the face, the robot will scan the environment in the direction where the face was detected last time. To help the robot with detection make sure you have enough light in the room, especially if the faces are far away from the robot. If the robot detects multiple faces it will select the largest one. However, if there are many people in the room, the robot may get confused. Note that you can always change the mode back to  the non-autonomous (with the infrared remote control) by pushing **KEY1** button again.
 
 ## Safe shutdown of Google Vision AIY kit
 
-To power down the devices simply turn of  the white power switch on robot chassis. Once Arduino/Chassis don't have power, Google Vision kit would wait for 10 frames (about 5-7 seconds) and then LED on the top of the Google Vision AIY kit with blink 10 times with RED and Google AIY kit will go into safe shutdown mode. If you powered down Chassis by accident, you have those 5-7 second to power Chassis up again before Google Vision kit starts shut down process.
+To power down the devices simply turn of the white power switch on robot chassis. Once Arduino/Chassis' power is down, Google Vision kit would wait for 10 frames (about 5-7 seconds) and, after LED on the top of the Google Vision AIY kit blinks 10 times with RED, Google AIY kit will go into safe shutdown mode. If you powered down Chassis by accident, you have those 5-7 second to power Chassis up back again before Google Vision kit starts the shutdown process.
 
 ## Conclusion
 
-I really enjoyed dong this project and would appreciate your feedback. There are many interesting project based on this platform - one can design a better (PID) controller to drive the robot toward the goal, one can fuse information from Google Vision AIY kit camera with the data from the installed on the car ultra-sound and infrared sensors; one can try different model to avoid obstacles. If you decide to do this project please keep me posted on your progress.
+I really enjoyed doing this project and would appreciate your feedback. There are many interesting projects based on this platform - one can design a better (PID) controller to drive the robot toward the goal, one can fuse information from Google Vision AIY kit camera with the data from the installed on the car ultra-sound and infrared sensors; one can try different model to avoid obstacles. If you decide to do this project please keep me posted on your progress.
 
 ## Bonus video
 
