@@ -56,26 +56,26 @@ Make sure that the charging port of the power supply is accessible so you could 
 
 ## Connecting Google Vision AIY kit with Arduino
 
-The output of face-detection model which runs on Vision Bonnet of Google Vision AIY kit should be sent from Google Vision kit to Arduino so the car could act on it. The question is how to connect these two devices. A natural way would be to use a Serial port of Arduino and Data port of Google Vision kit. Unfortunately, communication via Serial port substantially slows down the face-detector which runs on Google Vision. Because of this I decided to design a communication protocol which uses 4 GPIO expansion pins (**PIN_A** to **PIN_D**) on the Vision Bonnet of Google Vision kit and 4 Arduino pins.
+The output of the face-detection model which runs on Vision Bonnet of Google Vision AIY kit should be sent from Google Vision kit to Arduino so the car could act on it. The question is how to connect these two devices. A natural way would be to use a Serial port of Arduino and Data port of Google Vision kit. Unfortunately, communication via Serial port substantially slows down the face-detector which runs on Google Vision. Because of this, I decided to design a communication protocol which uses 4 GPIO expansion pins (**PIN_A** to **PIN_D**) on the Vision Bonnet of Google Vision kit and 4 Arduino pins.
 
 | GPIO expansion pins of Vision Bonnet | GPIO pins on the back of the kit |
 |---------------------------------------------|----------------------| 
 | <img width="400" height="300" src="images/gpio-top.png"> | <img width="225" height="300" src="images/GPIO pins.jpg"> |
 
-Analysis of chassis schematics and Arduino sketch uploaded to UNO R3 by a manufacturer (called *Comprehensive_Experiment.ino*) showed that all Arduino pins except for digital pin **#11** (**D11**) are used by car sensors, actuators and other devices. As I need 4 pins for communication, I removed three components:
+Analysis of chassis schematics and Arduino sketch uploaded to UNO R3 by a manufacturer (called *Comprehensive_Experiment.ino*) showed that all Arduino pins except for digital pin **#11** (**D11**) are used by car sensors, actuators, and other devices. As I need 4 pins for communication, I removed three components:
 - Speaker (buzzer) connected to the digital pin **#12** (**D12**); and
-- Two line tracking sensors installed on the bottom of the car which were connected to analog pins **A2** and **A3** of Arduino UNO R3. 
+- Two line-tracking sensors installed on the bottom of the car connected to analog pins **A2** and **A3** of Arduino UNO R3. 
 
 I also removed (unplugged) a Bluetooth module as I did not plan to use it.
 
-This gave me 4 pins (D11, D12, A2 and A3) for communication with 4 GPIO expansion pins (PIN_A, PIN_B, PIN_C and PIN_D) of Vision Bonnet of Google Vision AIY kit.
+This gave me 4 pins (D11, D12, A2, and A3) for communication with 4 GPIO expansion pins (PIN_A, PIN_B, PIN_C, and PIN_D) of Vision Bonnet of Google Vision AIY kit.
 
 ## Logic Level Converter
 
 Because Arduino is a 5 Volt device and Raspberry Pi of Google Vision AIY kit is a 3.3 Volt device and because we want to use 4 pins for communication, we would need a **4-channel Level Logic Converter (or LLC)**.
 
 ### Arduino side: 
-I soldered three 3-Pin Breakaway Pin Headers to the car chassis (marked **UD4**, **UD3** and **UD5** on the chassis and on the image below) and then used three 3-pin 15cm Servo Extension Male-to-Male cables to connect those pin male headers to Logic Level Converter (Arduino or **HIGH** side of the LLC.)
+I soldered three 3-Pin Breakaway Pin Headers to the car chassis (marked **UD4**, **UD3**, and **UD5** on the chassis and on the image below) and then used three 3-pin 15cm Servo Extension Male-to-Male cables to connect those pin male headers to Logic Level Converter (Arduino or **HIGH** side of the LLC.)
 
 | Three 3-pin servo cables connecting Arduino pins with LLC |
 |-----------------------------------------------------------------------------|
@@ -90,7 +90,7 @@ I used 6-pin Jumper Wire to connect GPIO expansion pins of Vision Bonnet to Logi
 
 **IMPORTANT:** To avoid damaging your boards make sure that you connect all cables correctly to both devices and to the Logic Level Converter!
 
-The following schematics shows how Logic Level Converter is connected to Arduino (**H** or HIGH side of LLC) and Google Vision (**L** or LOW side of LLC.)
+The following schematic shows how Logic Level Converter is connected to Arduino (**H** or HIGH side of LLC) and Google Vision (**L** or LOW side of LLC.)
 
 | Schematics of LCC connections | Soldered LCC with connections |
 |---------------------------------------------|----------------------| 
